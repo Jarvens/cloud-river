@@ -13,10 +13,12 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var index_1 = require('../page/index');
 var cloud_river_button_1 = require('../page/cloud-river.button');
+var cloud_river_form_1 = require('../page/cloud-river.form');
 var routes = [
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component: index_1.Index },
-    { path: 'buttons', component: cloud_river_button_1.CloudRiverButton }
+    { path: 'buttons', component: cloud_river_button_1.CloudRiverButton },
+    { path: 'cloud-river-form', component: cloud_river_form_1.CloudRiverForm }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
