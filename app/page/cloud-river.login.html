@@ -1,1 +1,27 @@
-<a class="btn btn-primary" routerLink="/index">登录</a>
+<div class="container-fluid bg-primary">
+    <div class="row" style="height: 100%;">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="card" style="margin-top: 30%">
+                <div class="card-header" style="text-align: center;color:rgba(2,117,216,1)">
+                    <i class="fa fa-skyatlas fa-2x"></i>
+                    <span>云川科技</span>
+                </div>
+                <div class="card-block">
+                    <ngl-form-element [error]="hasError ? error : null" class="slds-m-top--small">
+                        <input nglFormControl type="text" placeholder="用户名" [required]="required">
+                    </ngl-form-element>
+                    <ngl-form-element  [error]="hasError ? error : null" class="slds-m-top--small">
+                        <input nglFormControl type="password" placeholder="密码" [required]="required">
+                    </ngl-form-element>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn-primary" nglButton="neutral" (click)="login()">登录</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <!--<a class="btn btn-primary" routerLink="/index">登录</a>-->
+    <!--<ngl-badge type="success" routerLink="/index">Success</ngl-badge>-->
+</div>
