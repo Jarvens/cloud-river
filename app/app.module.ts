@@ -8,6 +8,9 @@ import {Index} from './page/index';
 import {CloudRiverButton} from './page/cloud-river.button';
 import {CloudRiverForm} from './page/cloud-river.form';
 import {CloudRiverAds} from './page/cloud-river.ads';
+import {CloudRiverLogin} from './page/cloud-river.login';
+import {CloudRiverNavLeft} from './nav/cloud-river.nav.left';
+import {CloudRiverNavTop} from './nav/cloud-river.nav.top';
 
 @NgModule({
 	imports: [BrowserModule,
@@ -19,7 +22,10 @@ import {CloudRiverAds} from './page/cloud-river.ads';
 		Index,
 		CloudRiverButton,
 		CloudRiverForm,
-		CloudRiverAds,],
+		CloudRiverAds,
+		CloudRiverLogin,
+		CloudRiverNavLeft,
+		CloudRiverNavTop],
 	bootstrap: [AppComponent]
 })
 export class AppModule {

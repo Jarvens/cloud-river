@@ -18,6 +18,9 @@ var index_1 = require('./page/index');
 var cloud_river_button_1 = require('./page/cloud-river.button');
 var cloud_river_form_1 = require('./page/cloud-river.form');
 var cloud_river_ads_1 = require('./page/cloud-river.ads');
+var cloud_river_login_1 = require('./page/cloud-river.login');
+var cloud_river_nav_left_1 = require('./nav/cloud-river.nav.left');
+var cloud_river_nav_top_1 = require('./nav/cloud-river.nav.top');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -32,7 +35,10 @@ var AppModule = (function () {
                 index_1.Index,
                 cloud_river_button_1.CloudRiverButton,
                 cloud_river_form_1.CloudRiverForm,
-                cloud_river_ads_1.CloudRiverAds,],
+                cloud_river_ads_1.CloudRiverAds,
+                cloud_river_login_1.CloudRiverLogin,
+                cloud_river_nav_left_1.CloudRiverNavLeft,
+                cloud_river_nav_top_1.CloudRiverNavTop],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

@@ -5,12 +5,17 @@ import{Index}from '../page/index';
 import {CloudRiverButton} from '../page/cloud-river.button';
 import {CloudRiverForm} from '../page/cloud-river.form';
 import {CloudRiverAds} from '../page/cloud-river.ads';
+import {CloudRiverLogin} from '../page/cloud-river.login';
 const routes: Routes = [
-	{path: '', redirectTo: '/index', pathMatch: 'full'},
-	{path: 'index', component: Index},
-	{path: 'buttons', component: CloudRiverButton},
-	{path: 'cloud-river-form', component: CloudRiverForm},
-	{path: 'cloud-river-ads', component: CloudRiverAds}
+	{path: '', redirectTo: '/cloud-river-login', pathMatch: 'full'},
+	{path: 'cloud-river-login', component: CloudRiverLogin},
+	{
+		path: 'index', component: Index, children: [
+		{path: 'buttons', component: CloudRiverButton},
+		{path: 'cloud-river-form', component: CloudRiverForm},
+		{path: 'cloud-river-ads', component: CloudRiverAds}]
+	}
+
 ];
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
