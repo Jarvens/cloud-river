@@ -26,7 +26,7 @@ html { height: 100%;}
 
 #sidebar-wrapper {
     z-index: 1000;
-    left: 220px;
+    left: 204px;
     width: 220px;
     height: 100%;
     margin-left: -220px;
