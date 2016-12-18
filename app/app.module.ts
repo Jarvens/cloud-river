@@ -7,16 +7,19 @@ import {AppRoutingModule} from './router/app.routing';
 import {Index} from './page/index';
 import {CloudRiverButton} from './page/cloud-river.button';
 import {CloudRiverForm} from './page/cloud-river.form';
+import {CloudRiverAds} from './page/cloud-river.ads';
 
 @NgModule({
 	imports: [BrowserModule,
 		NglModule.forRoot(),
 		AppRoutingModule,
 		FormsModule],
-	declarations: [AppComponent,
+	declarations: [
+		AppComponent,
 		Index,
 		CloudRiverButton,
-		CloudRiverForm],
+		CloudRiverForm,
+		CloudRiverAds,],
 	bootstrap: [AppComponent]
 })
 export class AppModule {

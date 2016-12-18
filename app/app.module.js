@@ -17,6 +17,7 @@ var app_routing_1 = require('./router/app.routing');
 var index_1 = require('./page/index');
 var cloud_river_button_1 = require('./page/cloud-river.button');
 var cloud_river_form_1 = require('./page/cloud-river.form');
+var cloud_river_ads_1 = require('./page/cloud-river.ads');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,10 +27,12 @@ var AppModule = (function () {
                 ng_lightning_1.NglModule.forRoot(),
                 app_routing_1.AppRoutingModule,
                 forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent,
+            declarations: [
+                app_component_1.AppComponent,
                 index_1.Index,
                 cloud_river_button_1.CloudRiverButton,
-                cloud_river_form_1.CloudRiverForm],
+                cloud_river_form_1.CloudRiverForm,
+                cloud_river_ads_1.CloudRiverAds,],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

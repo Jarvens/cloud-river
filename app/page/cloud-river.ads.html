@@ -1,0 +1,53 @@
+<button type="button" nglButton="neutral" (click)="hideName = !hideName" class="slds-m-bottom--large">
+    显示(隐藏)全称
+</button>
+<button type="button" nglButton="neutral" (click)="loading = !loading" class="slds-m-bottom--large">显示(隐藏)Loading
+</button>
+<button type="button" nglButton="neutral" (click)="toggleData()" class="slds-m-bottom--large">清空数据</button>
+
+<table ngl-datatable [data]="data" trackByKey="rank" [loading]="loading" [(sort)]="sort" (sortChange)="onSort($event)"
+       (onRowClick)="onRowClick($event)" class="slds-max-medium-table--stacked-horizontal">
+    <ngl-datatable-column heading="编码" key="rank" sortable></ngl-datatable-column>
+    <ngl-datatable-column heading="全称" key="name" *ngIf="!hideName" cellClass="slds-truncate"
+                          sortable></ngl-datatable-column>
+    <ngl-datatable-column heading="简称" key="surname" cellClass="slds-truncate" sortable>
+        <template nglDatatableCell let-row="row"><b>{{row.surname}}</b></template>
+    </ngl-datatable-column>
+    <ngl-datatable-column heading="电话" key="mobile">
+    </ngl-datatable-column>
+    <ngl-datatable-column heading="地址" key="address">
+    </ngl-datatable-column>
+    <ngl-datatable-column heading="热度" key="points">
+        <template nglDatatableCell let-value>
+            <ngl-badge>{{value | number}}</ngl-badge>
+        </template>
+    </ngl-datatable-column>
+    <ngl-datatable-column heading="操作" key="">
+        <template nglDatatableCell let-row="row">
+            <ngl-badge type="info" (click)="open()"><i class="fa fa-info"></i></ngl-badge>
+            <ngl-badge type="success" (click)="open()"><i class="fa fa-edit"></i></ngl-badge>
+            <ngl-badge type="error" (click)="open()"><i class="fa fa-times"></i></ngl-badge>
+        </template>
+    </ngl-datatable-column>
+
+    <!-- Loading overlay -->
+    <template nglLoadingOverlay>
+        <div class="slds-box slds-box--small slds-theme--shade slds-text-align--center">Loading...</div>
+    </template>
+
+    <!-- No rows overlay -->
+    <template nglNoRowsOverlay>没有您要查询的数据!</template>
+</table>
+
+<!--模态层-->
+<ngl-modal [header]="noHeader ? '' : 'Modal Header'" [(open)]="opened" [size]="size" [directional]="directional">
+    <div body>
+        <p>Sit nulla est ex deserunt exercitation anim occaecat. Tempor cupidatat consequat elit dolor adipisicing.</p>
+        <p>Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit officia.</p>
+        <p>Labore esse esse cupidatat amet velit id elit consequat minim ullamco mollit enim excepteur ea.</p>
+    </div>
+    <template ngl-modal-footer *ngIf="!noFooter">
+        <button class="slds-button slds-button--neutral" (click)="cancel()">Cancel</button>
+        <button class="slds-button slds-button--brand">Save</button>
+    </template>
+</ngl-modal>
